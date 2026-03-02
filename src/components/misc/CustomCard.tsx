@@ -17,8 +17,8 @@ export function AboutCard() {
                         <Image
                             src="/neil.jpg"
                             alt="Neil Laturkar"
-                            width={256}
-                            height={320}
+                            width={280}
+                            height={420}
                             className="w-full object-cover"
                         />
                     </div>
