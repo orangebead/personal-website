@@ -8,12 +8,12 @@ export function AboutCard() {
 
                 {/* Photo Card */}
                 <NeonGradientCard
-                    className="w-64 shrink-0"
+                    className="w-64 shrink-0 overflow-visible"
                     borderSize={3}
                     borderRadius={16}
                     neonColors={{ firstColor: "#7c3aed", secondColor: "#06b6d4" }}
                 >
-                    <div className="overflow-visible rounded-2xl">
+                    <div className="rounded-2xl">
                         <Image
                             src="/neil.jpg"
                             alt="Neil Laturkar"
