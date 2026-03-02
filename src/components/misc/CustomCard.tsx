@@ -13,7 +13,7 @@ export function AboutCard() {
                     borderRadius={16}
                     neonColors={{ firstColor: "#7c3aed", secondColor: "#06b6d4" }}
                 >
-                    <div className="overflow-hidden rounded-2xl">
+                    <div className="overflow-visible rounded-2xl">
                         <Image
                             src="/neil.jpg"
                             alt="Neil Laturkar"
