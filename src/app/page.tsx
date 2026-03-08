@@ -10,26 +10,27 @@ import { AboutCard } from "@/components/misc/CustomCard";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-10">
+      <CustomScrollProgress />
       <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-background">
-        <CustomScrollProgress />
         <InteractiveGrid />
 
-        {/* Your hero content on top */}
-        <HyperText
-          children="Neil Laturkar"
-          className="text-4xl md:text-8xl font-bold"
-        />
-        <TypingAnimation
-          className="text-2xl md:text-3xl"
-          words={["Computer Science Student at BITS-Pilani Dubai Campus"]}
-        />
-
+        {/* Content above grid */}
+        <div className="relative z-10 flex flex-col items-center gap-4">
+          <HyperText
+            children="Neil Laturkar"
+            className="text-4xl md:text-8xl font-bold"
+          />
+          <TypingAnimation
+            className="text-2xl md:text-3xl"
+            words={["Computer Science Student at BITS-Pilani Dubai Campus"]}
+          />
+        </div>
       </div>
       <CustomScrollBasedVelocity />
-      <div className="my-10 flex w-full flex-col items-center justify-center">
+      <div className="relative z-10 my-10 flex w-full flex-col items-center justify-center">
         <AboutCard />
       </div>
-      <DockDemo />
+      {/* <DockDemo /> */}
     </main>
-  );
+  )
 }

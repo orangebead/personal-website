@@ -1,4 +1,4 @@
-// components/backgrounds/InteractiveGrid.tsx
+"use client"
 import { InteractiveGridPattern } from "@/components/backgrounds/Grid"
 import { cn } from "@/lib/utils"
 
