@@ -28,7 +28,7 @@ export function AboutCard() {
                 <div className="max-w-lg space-y-4">
                     <h2 className="text-4xl font-bold tracking-tight">Hey, I'm Neil Laturkar 👋</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        I'm a passionate second year computer science student at BITS-Pilani Dubai Campus with a strong interest in software development, machine learning, and data science. I love travelling and trying out new things. I indulge gaming and listen to music in my free time. I enjoy working on projects that force me to learn something new, which is what brought me to software development (there is always somehthing new to learn in the world of tech!).
+                        I'm a passionate second year computer science student at BITS-Pilani Dubai Campus with a strong interest in software development, machine learning, and data science. I love travelling and trying out new things. I love gaming and listening to music. I enjoy working on projects that force me to learn something new, which is what brought me to software development (there is always something new to learn in the world of tech!).
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                         If you'd like to connect, feel free to reach out on any of the socials linked in the dock at the bottom of the page!
