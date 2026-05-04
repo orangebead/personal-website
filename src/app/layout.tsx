@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/shared/SmoothScroll";
-// import "./globals.css";
+import "./globals.css";
 import { Dock } from "lucide-react";
 import { DockDemo } from "@/components/shared/CustomDock";
 
