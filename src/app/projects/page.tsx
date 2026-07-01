@@ -5,6 +5,13 @@ import { ProjectCard } from "@/components/misc/ProjectCard"
 
 const projects = [
   {
+    title: "Cabinet - Videogame library tracker",
+    description: "Web App to track your videogame library. Organize, rate and review games. Check insights on your library and see what your friends are playing.",
+    tags: ["React", "Vite", "PostgreSQL", "Tailwind", "TypeScript", "Supabase", "Recharts"],
+    liveUrl: "https://cabinet22.vercel.app",
+    githubUrl: "https://github.com/orangebead/cabinet",
+  },
+  {
     title: "Gesture Based Image Marking Tool",
     description: "A hands-free marking tool for situations where you need to mark a point of interest on an image without touching anything — built for lab settings, mechanics with gloves, and similar use cases.",
     tags: ["Python", "Computer Vision", "OpenCV"],
@@ -17,13 +24,12 @@ const projects = [
     githubUrl: "https://github.com/orangebead/retail-analytics",
   },
   {
-    title: "My Website!",
-    description: "My Personal Portfolio built with Next.js, showcasing my projects, skills, and experience.",
+    title: "My Website",
+    description: "You're currently on it! My Personal Portfolio built with Next.js, showcasing my projects, skills, and experience.",
     tags: ["React", "Next.js", "TypeScript", "Tailwind"],
     liveUrl: "https://neillaturkar.vercel.app",
     githubUrl: "https://github.com/orangebead/personal-website",
   },
-  // add more...
 ]
 
 export default function Projects() {
@@ -32,7 +38,7 @@ export default function Projects() {
       <InteractiveGrid className="opacity-20 pointer-events-none" />
       <main className="relative z-10 px-8 py-16 max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold">Projects</h1>
-        <p className="mt-4 text-muted-foreground">Things I've built</p>
+        <p className="mt-4 text-muted-foreground">Things I've built – I love to experiment with new technologies and build interesting projects. This is a collection of some of my work in progress.</p>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.title} {...project} />

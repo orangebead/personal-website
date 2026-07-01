@@ -26,7 +26,7 @@ export function AboutCard() {
 
                 {/* Bio */}
                 <div className="max-w-lg space-y-4">
-                    <h2 className="text-4xl font-bold tracking-tight">Hey, I'm Neil Laturkar 👋</h2>
+                    <h2 className="text-4xl font-bold tracking-tight">Hey, I'm Neil Laturkar</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
                         Second year CS student at BITS-Pilani Dubai, focused on software development, ML, and data science. I pick projects based on one criterion: will this force me to learn something I don't know yet?
 Off-screen, I travel, game, and listen to a lot of music.
