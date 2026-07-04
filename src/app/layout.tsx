@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import "./globals.css";
-import { Dock } from "lucide-react";
 import { DockDemo } from "@/components/shared/CustomDock";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Point this to exactly where you saved the font file
+const geistPixel = localFont({
+  src: "./fonts/GeistPixel.ttf",
+  variable: "--font-geist-pixel",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistPixel.variable} ${geistPixel.className} antialiased`}
       >
         <SmoothScroll>
           {children}
