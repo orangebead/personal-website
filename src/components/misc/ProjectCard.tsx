@@ -9,6 +9,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ title, description, tags, liveUrl, githubUrl }: ProjectCardProps) {
+  // Check if the URL starts with HTTP to determine if it's external
+  const isExternalLiveUrl = liveUrl?.startsWith("http");
+
   return (
     <div className="group rounded-2xl border bg-card p-6 transition-all hover:shadow-lg hover:-translate-y-1">
       
@@ -32,12 +35,22 @@ export function ProjectCard({ title, description, tags, liveUrl, githubUrl }: Pr
       {/* Links */}
       <div className="mt-6 flex gap-4">
         {liveUrl && (
-          <Link href={liveUrl} target="_blank" className="text-sm font-medium hover:underline">
-            Live Demo ↗
+          <Link 
+            href={liveUrl} 
+            target={isExternalLiveUrl ? "_blank" : undefined}
+            rel={isExternalLiveUrl ? "noopener noreferrer" : undefined} 
+            className="text-sm font-medium hover:underline"
+          >
+            {isExternalLiveUrl ? "Live Demo ↗" : "Read Post →"}
           </Link>
         )}
         {githubUrl && (
-          <Link href={githubUrl} target="_blank" className="text-sm text-muted-foreground hover:underline">
+          <Link 
+            href={githubUrl} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm text-muted-foreground hover:underline"
+          >
             GitHub ↗
           </Link>
         )}

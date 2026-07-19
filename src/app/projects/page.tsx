@@ -12,6 +12,12 @@ const projects = [
     githubUrl: "https://github.com/orangebead/cabinet",
   },
   {
+    title: "Are Intercity Routes RTA's Most Valuable Routes?",
+    description: "A data-driven breakdown of the profitability of RTA's E306 intercity bus route vs the X23, calculated during my daily commute.",
+    tags: ["Data Analysis", "Research", "Writing"],
+    liveUrl: "/projects/rta-intercity-analysis", // This links to your dynamic route!
+  },
+  {
     title: "Gesture Based Image Marking Tool",
     description: "A hands-free marking tool for situations where you need to mark a point of interest on an image without touching anything — built for lab settings, mechanics with gloves, and similar use cases.",
     tags: ["Python", "Computer Vision", "OpenCV"],
@@ -31,6 +37,7 @@ const projects = [
     githubUrl: "https://github.com/orangebead/personal-website",
   },
 ]
+
 
 export default function Projects() {
   return (
