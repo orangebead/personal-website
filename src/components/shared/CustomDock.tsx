@@ -22,8 +22,8 @@ export function DockDemo() {
   }
 
   return (
-    <div className="fixed bottom-10 left-0 right-0 flex flex-col items-center z-50">
-      <Dock direction="middle" iconSize={56} iconMagnification={80}>
+    <div className="fixed bottom-10 left-0 right-0 flex flex-col items-center z-50 pointer-events-none">
+      <Dock direction="middle" iconSize={56} iconMagnification={80} className="pointer-events-auto">
 
         <DockIcon
           onClick={() => router.push("/")}
@@ -69,14 +69,14 @@ export function DockDemo() {
 
       {/* Tooltip */}
       {tooltip && (
-        <span className="absolute -top-8 rounded-md bg-foreground px-2 py-1 text-xs text-background">
+        <span className="absolute -top-8 rounded-md bg-foreground px-2 py-1 text-xs text-background pointer-events-none">
           {tooltip}
         </span>
       )}
 
       {/* Copied confirmation */}
       {copied && (
-        <span className="absolute -bottom-6 text-sm text-muted-foreground">
+        <span className="absolute -bottom-6 text-sm text-muted-foreground pointer-events-none">
           Email copied!
         </span>
       )}
