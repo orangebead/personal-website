@@ -17,51 +17,11 @@ interface NeonColorsProps {
 }
 
 interface NeonGradientCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  /**
-   * @default <div />
-   * @type ReactElement
-   * @description
-   * The component to be rendered as the card
-   * */
   as?: ReactElement
-  /**
-   * @default ""
-   * @type string
-   * @description
-   * The className of the card
-   */
   className?: string
-
-  /**
-   * @default ""
-   * @type ReactNode
-   * @description
-   * The children of the card
-   * */
   children?: ReactNode
-
-  /**
-   * @default 5
-   * @type number
-   * @description
-   * The size of the border in pixels
-   * */
   borderSize?: number
-
-  /**
-   * @default 20
-   * @type number
-   * @description
-   * The size of the radius in pixels
-   * */
   borderRadius?: number
-
-  /**
-   * @default "{ firstColor: '#ff00aa', secondColor: '#00FFF1' }"
-   * @type string
-   * @description
-   * The colors of the neon gradient
-   * */
   neonColors?: NeonColorsProps
 }
 
@@ -71,8 +31,8 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
   borderSize = 2,
   borderRadius = 20,
   neonColors = {
-    firstColor: "#ff00aa",
-    secondColor: "#00FFF1",
+    firstColor: "#93c5fd", // Changed default to a softer blue for light mode
+    secondColor: "#c084fc", // Changed default to a softer purple
   },
   ...props
 }) => {
@@ -117,27 +77,33 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "--pseudo-element-background-image": `linear-gradient(0deg, ${neonColors.firstColor}, ${neonColors.secondColor})`,
           "--pseudo-element-width": `${dimensions.width + borderSize * 2}px`,
           "--pseudo-element-height": `${dimensions.height + borderSize * 2}px`,
-          "--after-blur": `${dimensions.width / 3}px`,
+          "--after-blur": `${dimensions.width / 4}px`, // Reduced blur spread slightly for a cleaner look
         } as CSSProperties
       }
       className={cn(
-        "relative z-10 size-full rounded-[var(--border-radius)]",
+        "group relative z-10 size-full rounded-[var(--border-radius)]", // Added 'group'
         className
       )}
       {...props}
     >
       <div
         className={cn(
-          "relative size-full min-h-[inherit] rounded-[var(--card-content-radius)] bg-gray-100 p-6",
+          "relative size-full min-h-[inherit] rounded-[var(--card-content-radius)] bg-white p-6", // Forced bg-white
+          
+          /* Inner glowing border */
           "before:absolute before:-top-[var(--border-size)] before:-left-[var(--border-size)] before:-z-10 before:block",
           "before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-[var(--border-radius)] before:content-['']",
           "before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]",
-          "before:animate-background-position-spin",
+          "before:opacity-0 group-hover:before:opacity-100 before:transition-opacity before:duration-700", // Hover transition
+          "before:[animation:background-position-spin_8s_linear_infinite]", // Slowed down
+          
+          /* Outer blurred glow */
           "after:absolute after:-top-[var(--border-size)] after:-left-[var(--border-size)] after:-z-10 after:block",
           "after:h-[var(--pseudo-element-height)] after:w-[var(--pseudo-element-width)] after:rounded-[var(--border-radius)] after:blur-[var(--after-blur)] after:content-['']",
-          "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:opacity-80",
-          "after:animate-background-position-spin",
-          "dark:bg-neutral-900",
+          "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%]",
+          "after:opacity-0 group-hover:after:opacity-50 after:transition-opacity after:duration-700", // Hover transition
+          "after:[animation:background-position-spin_8s_linear_infinite]", // Slowed down
+          
           "break-words"
         )}
       >
