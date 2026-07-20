@@ -18,13 +18,21 @@ export function AboutCard() {
 
                 {/* Bio */}
                 <div className="max-w-lg space-y-4">
-                    <h2 className="text-4xl font-bold tracking-tight">Hey, I'm Neil Laturkar</h2>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        Second year CS student at BITS-Pilani Dubai, focused on software development, ML, and data science. I pick projects based on one criterion: will this force me to learn something I don't know yet?
-                        Off-screen, I travel, game, and listen to a lot of music.
+                    <h2 className="text-4xl font-bold tracking-tight text-gray-900">Hey, I'm Neil Laturkar</h2>
+                    
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                        Second-year CS student at BITS Pilani Dubai, minoring in Data Science. I'm drawn to problems more than to any one field, and I love working on things that have an impact in everyday life.
                     </p>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                        If you'd like to connect, feel free to reach out on any of the socials linked in the dock at the bottom of the page!
+                    
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                        I pick projects based on one criterion: will this force me to learn something I don't know yet?
+                    </p>
+
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                        On the side, I love spotting the nuances of different countries, which is why I love playing GeoGuessr. I also enjoy watching and analyzing football, playing videogames, listening to music, and watching bad movies on purpose.
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                        Check out the Archive if you'd like to see some of my work, or if you'd like to connect, feel free to reach out on any of the socials linked in the dock at the bottom of the page!
                     </p>
 
                     {/* Stack tags */}
@@ -32,7 +40,7 @@ export function AboutCard() {
                         {["React", "Next.js", "TypeScript", "Node.js", "Tailwind", "Python", "Java", "AI/ML"].map((tech) => (
                             <span
                                 key={tech}
-                                className="rounded-full border px-3 py-1 text-sm text-muted-foreground"
+                                className="rounded-full border px-3 py-1 text-sm text-gray-500"
                             >
                                 {tech}
                             </span>

@@ -22,7 +22,7 @@ export default function Home() {
           />
           <TypingAnimation
             className="text-2xl md:text-3xl"
-            words={["Computer Science Student @ BITS-Pilani Dubai Campus"]}
+            words={["CS @ BITS-Pilani Dubai Campus"]}
           />
         </div>
       </div>
