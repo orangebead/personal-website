@@ -6,7 +6,6 @@ interface InteractiveGridProps {
   width?: number
   height?: number
   squares?: [number, number]
-  gradientSize?: string
   className?: string
   squaresClassName?: string
 }
@@ -14,8 +13,8 @@ interface InteractiveGridProps {
 export function InteractiveGrid({
   width = 40,
   height = 40,
-  squares = [40, 40],
-  gradientSize = "600px",
+  // Increased to 100 horizontal squares so it covers 4000px, spanning any screen width
+  squares = [100, 50], 
   className,
   squaresClassName,
 }: InteractiveGridProps) {
@@ -25,12 +24,12 @@ export function InteractiveGrid({
       height={height}
       squares={squares}
       className={cn(
-        "absolute inset-0 h-full w-full",
-        `[mask-image:radial-gradient(${gradientSize}_circle_at_center,white,transparent)]`,
+        // Use a linear gradient to keep the full width while fading out at the bottom
+        "[mask-image:linear-gradient(to_bottom,white_40%,transparent_100%)]",
         className
       )}
       squaresClassName={cn(
-        "hover:fill-zinc-600/20 dark:hover:fill-zinc-400/20",
+        "hover:fill-gray-400/30",
         squaresClassName
       )}
     />
