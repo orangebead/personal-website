@@ -35,10 +35,10 @@ export function DockDemo() {
 
         <DockIcon
           onClick={() => router.push("/projects")}
-          onMouseEnter={() => setTooltip("Projects")}
+          onMouseEnter={() => setTooltip("Archive")}
           onMouseLeave={() => setTooltip(null)}
         >
-          <Icons.projects className="size-7" />
+          <Icons.archive className="size-7" />
         </DockIcon>
 
         <DockIcon
@@ -91,10 +91,11 @@ const Icons = {
       <polyline points="9 22 9 12 15 12 15 22" />
     </svg>
   ),
-  projects: (props: IconProps) => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} {...props}>
-      <rect x="2" y="3" width="20" height="14" rx="2" />
-      <path d="M8 21h8M12 17v4" />
+  archive: (props: IconProps) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M21 8v13H3V8" />
+      <path d="M1 3h22v5H1z" />
+      <path d="M10 12h4" />
     </svg>
   ),
   gitHub: (props: IconProps) => (

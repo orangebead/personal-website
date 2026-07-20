@@ -1,5 +1,6 @@
 // src/app/projects/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { articles } from "@/data/articles";
@@ -22,8 +23,18 @@ export default async function ArticlePage({
     <div className="relative min-h-screen">
       <InteractiveGrid className="opacity-20 pointer-events-none fixed inset-0" />
       
-      {/* Added pb-32 so the content doesn't hide under your bottom dock */}
       <main className="relative z-10 px-8 py-16 pb-32 max-w-3xl mx-auto">
+        
+        {/* Back to Archive Button */}
+        <div className="mb-10">
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
+          >
+            ← Back to Archive
+          </Link>
+        </div>
+
         <header className="mb-12">
           {/* Strict light mode styling */}
           <h1 className="text-4xl font-bold mb-4 text-gray-900">{article.title}</h1>
