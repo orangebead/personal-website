@@ -5,11 +5,11 @@ import { InteractiveGrid } from "@/components/backgrounds/CustomGrid"
 
 const workExperience = [
   {
-    role: "Software Engineering Intern",
+    role: "Data Analytics Intern",
     organization: "Suntech Business Solutions",
     date: "Jun 2026 – Present",
-    description: "Building a feature-usage telemetry pipeline to capture user interaction events. Developing real-time invoice analytics dashboards using Power BI and AWS QuickSight, and working within a fintech platform handling UAE e-invoicing compliance.",
-  }
+    description: "Building an operational analytics reporting pipeline for senior leadership, from PostgreSQL into Metabase dashboards. Delivered a mentor-approved prototype using synthetic data ahead of production data availability, and proposed an AWS-based architecture (S3, EventBridge, Lambda) with a cost breakdown for scaling the pipeline to production.",
+  },
 ]
 
 const extracurriculars = [
@@ -18,7 +18,7 @@ const extracurriculars = [
     organization: "Microsoft Tech Club (MTC)",
     date: "Aug 2025 – Present",
     description: "Led a campus-wide AI workshop on recommendation systems and developed the official MTC website using React and Tailwind CSS. Assisted in prepping materials and managing the overall flow for the club's Vibe Coding workshop.",
-  }
+  },
 ]
 
 const education = [
