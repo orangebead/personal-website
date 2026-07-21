@@ -33,7 +33,7 @@ export default function ContactPage() {
 
         <div className="flex flex-col gap-4">
           
-          {/* Email Button (Copies to clipboard) */}
+          {/* Email Button */}
           <button 
             onClick={handleCopyEmail}
             className="group flex items-center justify-between p-5 rounded-2xl border bg-white transition-all hover:shadow-md hover:-translate-y-1 w-full text-left"
@@ -96,6 +96,28 @@ export default function ContactPage() {
             </div>
             <span className="text-sm font-medium text-gray-400 group-hover:text-gray-900 transition-colors">↗</span>
           </Link>
+
+          {/* Download CV Button */}
+          <a 
+            href="/cv_july2026.pdf" 
+            download="Neil_Laturkar_CV.pdf"
+            className="group flex items-center justify-between p-5 rounded-2xl border bg-gray-900 transition-all hover:shadow-md hover:-translate-y-1 mt-2"
+          >
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-white/10 rounded-full text-white">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="size-6">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-white">Download CV</h3>
+                <p className="text-sm text-gray-300">Get a copy of my resume</p>
+              </div>
+            </div>
+            <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors">↓</span>
+          </a>
 
         </div>
       </main>
