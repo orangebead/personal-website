@@ -21,9 +21,9 @@ export default function ContactPage() {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
       <InteractiveGrid className="opacity-20 pointer-events-none fixed inset-0" />
-      
+
       <main className="relative z-10 px-8 py-16 w-full max-w-lg mx-auto">
-        
+
         <header className="mb-10 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h1>
           <p className="text-gray-600">
@@ -32,9 +32,9 @@ export default function ContactPage() {
         </header>
 
         <div className="flex flex-col gap-4">
-          
+
           {/* Email Button */}
-          <button 
+          <button
             onClick={handleCopyEmail}
             className="group flex items-center justify-between p-5 rounded-2xl border bg-white transition-all hover:shadow-md hover:-translate-y-1 w-full text-left"
           >
@@ -56,9 +56,9 @@ export default function ContactPage() {
           </button>
 
           {/* LinkedIn Link */}
-          <Link 
-            href={YOUR_LINKEDIN} 
-            target="_blank" 
+          <Link
+            href={YOUR_LINKEDIN}
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between p-5 rounded-2xl border bg-white transition-all hover:shadow-md hover:-translate-y-1"
           >
@@ -77,9 +77,9 @@ export default function ContactPage() {
           </Link>
 
           {/* GitHub Link */}
-          <Link 
-            href={YOUR_GITHUB} 
-            target="_blank" 
+          <Link
+            href={YOUR_GITHUB}
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between p-5 rounded-2xl border bg-white transition-all hover:shadow-md hover:-translate-y-1"
           >
@@ -98,8 +98,8 @@ export default function ContactPage() {
           </Link>
 
           {/* Download CV Button */}
-          <a 
-            href="/cv_july2026.pdf" 
+          <a
+            href="/cv_july2026.pdf"
             download="Neil_Laturkar_CV.pdf"
             className="group flex items-center justify-between p-5 rounded-2xl border bg-gray-900 transition-all hover:shadow-md hover:-translate-y-1 mt-2"
           >
