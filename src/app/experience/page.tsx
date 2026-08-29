@@ -28,7 +28,12 @@ const extracurriculars = [
       {
         title: "Technical Executive",
         date: "Aug 2025 – Aug 2026",
-        description: "Led a campus-wide AI workshop on recommendation systems and developed the official MTC website using React and Tailwind CSS. Assisted in prepping materials and managing the overall flow for the club's Vibe Coding workshop.",
+        description: [
+          "Used AI-assisted coding to put together a self-updating \"About\" page for the club website.",
+          "Ran a workshop on recommendation systems with a teammate, covering collaborative and content-based filtering; with positive feedback from attendees.",
+          "Helped set up tooling and curriculum for the \"Vibe Coding\" workshop, including some AI-assisted coding tools.",
+          "Put together the game logic for a typing contest event.",
+        ],
       }
     ]
   },
@@ -46,12 +51,12 @@ const education = [
     ]
   },
   {
-    organization: "CBSE Grade 12",
+    organization: "Grade 12 (Science)",
     roles: [
       {
         title: "The Millennium School, Dubai",
         date: "Graduated 2023",
-        description: "Graduated with 87%. Science stream - Physics, Chemistry, Mathematics, Computer Science.",
+        description: "Graduated with 87%.",
       }
     ]
   }
@@ -62,7 +67,7 @@ const education = [
 interface RoleItem {
   title: string;
   date: string;
-  description: string;
+  description: string | string[];
 }
 
 interface TimelineItemProps {
@@ -99,7 +104,15 @@ function TimelineItem({ organization, roles, showConnector = true }: TimelineIte
               <h4 className="text-md font-semibold text-gray-800">{role.title}</h4>
               <span className="text-sm font-medium text-gray-500 mt-1 sm:mt-0 shrink-0 sm:ml-4">{role.date}</span>
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed">{role.description}</p>
+            {Array.isArray(role.description) ? (
+              <ul className="text-sm text-gray-600 leading-relaxed list-disc list-outside pl-4 space-y-1">
+                {role.description.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-gray-600 leading-relaxed">{role.description}</p>
+            )}
           </div>
         ))}
       </div>
