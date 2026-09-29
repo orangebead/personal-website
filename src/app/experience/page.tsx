@@ -1,18 +1,31 @@
 // src/app/experience/page.tsx
+
 import { InteractiveGrid } from "@/components/backgrounds/CustomGrid"
 
 // --- Data ---
 
 const workExperience = [
   {
+    organization: "BITS Pilani Dubai Campus",
+    roles: [
+      {
+        title: "Teaching Assistant – Digital Design Lab & Electrical Sciences Lab",
+        date: "2026 – Present",
+        description:
+          "Assisting students with laboratory experiments, guiding them through experiment procedures, and verifying their experimental outputs for accuracy.",
+      },
+    ],
+  },
+  {
     organization: "Suntech Business Solutions",
     roles: [
       {
         title: "Intern",
         date: "Jun 2026 – Jul 2026",
-        description: "Building an operational analytics reporting pipeline for senior leadership, from PostgreSQL into Metabase dashboards. Delivered a mentor-approved prototype using synthetic data ahead of production data availability, and proposed an AWS-based architecture (S3, EventBridge, Lambda) with a cost breakdown for scaling the pipeline to production.",
-      }
-    ]
+        description:
+          "Built an operational analytics reporting pipeline for senior leadership, connecting PostgreSQL data to Metabase dashboards. Delivered a mentor-approved prototype using synthetic data ahead of production data availability, and proposed an AWS-based production architecture using S3, EventBridge, and Lambda with a cost breakdown.",
+      },
+    ],
   },
 ]
 
@@ -23,19 +36,20 @@ const extracurriculars = [
       {
         title: "Technical Manager",
         date: "Aug 2026 – Present",
-        description: "Overseeing technical initiatives and project development for the club. Mentoring technical executives and directing the execution of campus-wide workshops and events.",
+        description:
+          "Overseeing technical initiatives and project development for the club. Mentoring technical executives and directing the execution of campus-wide workshops and events.",
       },
       {
         title: "Technical Executive",
         date: "Aug 2025 – Aug 2026",
         description: [
-          "Used AI-assisted coding to put together a self-updating \"About\" page for the club website.",
-          "Ran a workshop on recommendation systems with a teammate, covering collaborative and content-based filtering; with positive feedback from attendees.",
-          "Helped set up tooling and curriculum for the \"Vibe Coding\" workshop, including some AI-assisted coding tools.",
-          "Put together the game logic for a typing contest event.",
+          'Built an AI-assisted, self-updating "About" page for the club website.',
+          "Co-ran a workshop on recommendation systems covering collaborative and content-based filtering.",
+          'Helped set up tooling and curriculum for the "Vibe Coding" workshop.',
+          "Developed the game logic for a typing contest event.",
         ],
-      }
-    ]
+      },
+    ],
   },
 ]
 
@@ -46,9 +60,10 @@ const education = [
       {
         title: "BITS Pilani Dubai Campus",
         date: "2024 – 2028",
-        description: "Current CGPA: 9.3/10. Focusing on data-oriented software development, backend systems, and machine learning.",
-      }
-    ]
+        description:
+          "Current CGPA: 9.3/10. Focusing on data-oriented software development, backend systems, and machine learning.",
+      },
+    ],
   },
   {
     organization: "Grade 12 (Science)",
@@ -57,64 +72,85 @@ const education = [
         title: "The Millennium School, Dubai",
         date: "Graduated 2023",
         description: "Graduated with 87%.",
-      }
-    ]
-  }
+      },
+    ],
+  },
 ]
 
 // --- Timeline Component ---
 
 interface RoleItem {
-  title: string;
-  date: string;
-  description: string | string[];
+  title: string
+  date: string
+  description: string | string[]
 }
 
 interface TimelineItemProps {
-  organization: string;
-  roles: RoleItem[];
-  showConnector?: boolean;
+  organization: string
+  roles: RoleItem[]
 }
 
-function TimelineItem({ organization, roles, showConnector = true }: TimelineItemProps) {
-  const hasMultipleRoles = roles.length > 1;
+function TimelineItem({
+  organization,
+  roles,
+}: TimelineItemProps) {
+  const hasMultipleRoles = roles.length > 1
 
   return (
-    <div className="relative pb-12 group last:pb-0">
-      {/* Vertical Line (connects this org to the next one in the section) */}
-      {showConnector && (
-        <div className="absolute left-[9px] top-9 bottom-0 w-[2px] bg-gray-200 group-last:bg-transparent" />
-      )}
-      
-      {/* Organization Title — flush left, sits above its indented subparts */}
-      <h3 className="text-xl font-bold text-gray-900 mb-5">{organization}</h3>
-      
-      {/* Roles List — indented to read as subparts of the organization above */}
-      <div className="pl-8 space-y-6">
-        {roles.map((role, index) => (
-          <div key={index} className="relative">
-            {/* Connecting line between roles within the same organization (shows progression) */}
-            {hasMultipleRoles && index < roles.length - 1 && (
-              <div className="absolute -left-5 top-4 bottom-[-24px] w-[2px] bg-gray-200" />
-            )}
-            {/* Role Dot */}
-            <div className="absolute -left-6 top-1.5 h-2.5 w-2.5 rounded-full bg-gray-400" />
-            
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1.5">
-              <h4 className="text-md font-semibold text-gray-800">{role.title}</h4>
-              <span className="text-sm font-medium text-gray-500 mt-1 sm:mt-0 shrink-0 sm:ml-4">{role.date}</span>
-            </div>
-            {Array.isArray(role.description) ? (
-              <ul className="text-sm text-gray-600 leading-relaxed list-disc list-outside pl-4 space-y-1">
-                {role.description.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            ) : (
-              <p className="text-sm text-gray-600 leading-relaxed">{role.description}</p>
-            )}
-          </div>
-        ))}
+    <div className="flex gap-4">
+      {/* Organization dot */}
+      <div className="flex w-3 shrink-0 justify-center">
+        <div className="mt-1.5 h-2.5 w-2.5 rounded-full bg-gray-400 ring-4 ring-white" />
+      </div>
+
+      {/* Organization content */}
+      <div className="min-w-0 flex-1 pb-12">
+        <h3 className="mb-5 text-lg font-semibold text-gray-900">
+          {organization}
+        </h3>
+
+        <div className="space-y-7">
+          {roles.map((role, index) => {
+            const isLastRole = index === roles.length - 1
+
+            return (
+              <div key={index} className="relative pl-7">
+                {/* Progression line ONLY between roles
+                    within the same organization */}
+                {hasMultipleRoles && !isLastRole && (
+                  <div className="absolute left-[3px] top-3 bottom-[-28px] w-px bg-gray-200" />
+                )}
+
+                {/* Role dot */}
+                <div className="absolute left-0 top-[6px] h-2 w-2 rounded-full bg-gray-300" />
+
+                {/* Role header */}
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <h4 className="text-base font-semibold text-gray-900">
+                    {role.title}
+                  </h4>
+
+                  <span className="shrink-0 text-xs font-medium text-gray-400 sm:ml-4">
+                    {role.date}
+                  </span>
+                </div>
+
+                {/* Role description */}
+                {Array.isArray(role.description) ? (
+                  <ul className="mt-2 list-disc space-y-1 pl-4 text-sm leading-relaxed text-gray-600">
+                    {role.description.map((point, i) => (
+                      <li key={i}>{point}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    {role.description}
+                  </p>
+                )}
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -125,21 +161,28 @@ function TimelineItem({ organization, roles, showConnector = true }: TimelineIte
 export default function ExperiencePage() {
   return (
     <div className="relative min-h-screen">
-      <InteractiveGrid className="opacity-20 pointer-events-none fixed inset-0" />
-      
-      <main className="relative z-10 px-8 py-16 pb-32 max-w-3xl mx-auto space-y-16">
-        
+      <InteractiveGrid className="pointer-events-none fixed inset-0 opacity-20" />
+
+      <main className="relative z-10 mx-auto max-w-3xl px-6 py-16 sm:px-8 sm:py-20">
+
         {/* Header */}
-        <header>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Experience & Education</h1>
-          <p className="text-gray-600">
-            A timeline of my professional experience, academic background, and extracurricular involvement.
+        <header className="mb-16">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900">
+            Experience & Education
+          </h1>
+
+          <p className="max-w-2xl text-gray-600">
+            A timeline of my professional experience, academic background,
+            and extracurricular involvement.
           </p>
         </header>
 
-        {/* Work Experience Section */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 border-b pb-2">Work Experience</h2>
+        {/* Work Experience */}
+        <section className="mb-16">
+          <h2 className="mb-8 border-b pb-2 text-2xl font-bold text-gray-900">
+            Work Experience
+          </h2>
+
           <div>
             {workExperience.map((item, index) => (
               <TimelineItem key={index} {...item} />
@@ -147,9 +190,12 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        {/* Extracurriculars Section */}
-        <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 border-b pb-2">Extracurriculars</h2>
+        {/* Extracurriculars */}
+        <section className="mb-16">
+          <h2 className="mb-8 border-b pb-2 text-2xl font-bold text-gray-900">
+            Extracurriculars
+          </h2>
+
           <div>
             {extracurriculars.map((item, index) => (
               <TimelineItem key={index} {...item} />
@@ -157,12 +203,15 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        {/* Education Section */}
+        {/* Education */}
         <section>
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 border-b pb-2">Education</h2>
+          <h2 className="mb-8 border-b pb-2 text-2xl font-bold text-gray-900">
+            Education
+          </h2>
+
           <div>
             {education.map((item, index) => (
-              <TimelineItem key={index} {...item} showConnector={false} />
+              <TimelineItem key={index} {...item} />
             ))}
           </div>
         </section>
