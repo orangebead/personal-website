@@ -12,7 +12,7 @@ const workExperience = [
         title: "Teaching Assistant – Digital Design Lab & Electrical Sciences Lab",
         date: "2026 – Present",
         description:
-          "Assisting students with laboratory experiments, guiding them through experiment procedures, and verifying their experimental outputs for accuracy.",
+          "Supervise three lab sections (~20 students each), guiding students through experiments and verifying their results for accuracy.",
       },
     ],
   },
@@ -22,8 +22,11 @@ const workExperience = [
       {
         title: "Intern",
         date: "Jun 2026 – Jul 2026",
-        description:
-          "Built an operational analytics reporting pipeline for senior leadership, connecting PostgreSQL data to Metabase dashboards. Delivered a mentor-approved prototype using synthetic data ahead of production data availability, and proposed an AWS-based production architecture using S3, EventBridge, and Lambda with a cost breakdown.",
+        description: [
+          "Built a prototype operational analytics pipeline for senior leadership, connecting PostgreSQL data to Metabase dashboards.",
+          "With production data unavailable during the internship, generated synthetic data to build and validate the dashboards.",
+          "Proposed an AWS production architecture (S3, EventBridge, Lambda) with a cost breakdown.",
+        ],
       },
     ],
   },
@@ -37,16 +40,15 @@ const extracurriculars = [
         title: "Technical Manager",
         date: "Aug 2026 – Present",
         description:
-          "Overseeing technical initiatives and project development for the club. Mentoring technical executives and directing the execution of campus-wide workshops and events.",
+          "Lead the club's technical projects and mentor the technical executives. Organized and conducted campus workshop on Steganography with Python.",
       },
       {
         title: "Technical Executive",
         date: "Aug 2025 – Aug 2026",
         description: [
-          'Built an AI-assisted, self-updating "About" page for the club website.',
+          'Built a data-driven "About" page for the club website: editing a members and socials list automatically regenerates the grid of member cards.',
           "Co-ran a workshop on recommendation systems covering collaborative and content-based filtering.",
           'Helped set up tooling and curriculum for the "Vibe Coding" workshop.',
-          "Developed the game logic for a typing contest event.",
         ],
       },
     ],
