@@ -39,8 +39,10 @@ const extracurriculars = [
       {
         title: "Technical Manager",
         date: "Aug 2026 – Present",
-        description:
-          "Lead the club's technical projects and mentor the technical executives. Organized and conducted campus workshop on Steganography with Python.",
+        description: [
+          "Organized and conducted a campus workshop on steganography with Python.",
+          "Scheduled to conduct a workshop on gesture-based computer vision using hand tracking (Hands-Free Marking Tool), November 2026.",
+        ],
       },
       {
         title: "Technical Executive",
