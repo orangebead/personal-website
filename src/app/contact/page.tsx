@@ -99,7 +99,7 @@ export default function ContactPage() {
 
           {/* Download CV Button */}
           <a
-            href="/cv_nov2026.pdf"
+            href="/cv_nov2026_2.pdf"
             download="Neil_Laturkar_CV.pdf"
             className="group flex items-center justify-between p-5 rounded-2xl border bg-gray-900 transition-all hover:shadow-md hover:-translate-y-1 mt-2"
           >
